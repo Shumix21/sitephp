@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт с текстом, таблицей и градиентным фоном</title>
+    <style>
+        /* Стили для градиентного фона */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #3498db, #e74c3c);
+            z-index: -1;
+        }
+
+        /* Стили для контейнера с текстом и таблицей (по умолчанию скрыта) */
+        .container {
+            text-align: center;
+            padding: 50px;
+            display: none;
+        }
+
+        /* Стили для таблицы */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #fff;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="tableContainer">
+        <h1>Текст по центру</h1>
+        <table>
+            <tr>
+                <th>Sheeeesh</th>
+                <th>Sheeeesh</th>
+                <th>Sheeeesh</th>
+            </tr>
+            <tr>
+                <td>Sheeeesh 1</td>
+                <td>Sheeeesh 2</td>
+                <td>Sheeeesh 3</td>
+            </tr>
+            <tr>
+                <td>Sheeeesh 4</td>
+                <td>Sheeeesh 5</td>
+                <td>Sheeeesh 6</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Кнопка для отображения таблицы -->
+    <button id="showTableButton">Показать таблицу</button>
+
+    <script>
+        // JavaScript для обработки нажатия на кнопку и отображения таблицы
+        document.getElementById("showTableButton").addEventListener("click", function() {
+            var tableContainer = document.getElementById("tableContainer");
+            tableContainer.style.display = "block";
+        });
+    </script>
+</body>
+</html>
